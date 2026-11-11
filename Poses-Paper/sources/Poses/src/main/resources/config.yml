@@ -1,0 +1,4 @@
+# Hauteur du siège par rapport au dessus du bloc.
+# Négatif = plus bas. Si tu flottes au-dessus du bloc, baisse la valeur (ex: -0.4).
+# Si tu t'enfonces dans le bloc, monte-la (ex: 0.0).
+sit-offset: -0.2

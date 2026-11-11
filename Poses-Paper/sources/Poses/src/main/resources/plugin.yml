@@ -1,0 +1,25 @@
+name: Poses
+version: 1.0
+main: fr.poses.PosesPlugin
+api-version: "26.3"
+commands:
+  sit:
+    description: T'asseoir sur le bloc où tu es
+    usage: /sit
+    permission: poses.use
+  crawl:
+    description: Ramper au sol
+    usage: /crawl
+    permission: poses.use
+  lay:
+    description: T'allonger au sol
+    usage: /lay
+    permission: poses.use
+  spin:
+    description: Tourner sur toi-même (animation du trident)
+    usage: /spin
+    permission: poses.use
+permissions:
+  poses.use:
+    description: Utiliser /sit /crawl /lay /spin et s'asseoir sur les dalles/escaliers
+    default: true
