@@ -1,0 +1,29 @@
+name: Build
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Compiler Planeur
+        run: mvn -B package
+        working-directory: Planeur-Paper/sources/Planeur
+      - name: Compiler Chunker
+        run: mvn -B package
+        working-directory: Chunker-Paper/sources/Chunker
+      - name: Compiler Poses
+        run: mvn -B package
+        working-directory: Poses-Paper/sources/Poses
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Plugins
+          path: |
+            Planeur-Paper/sources/Planeur/target/Planeur-1.0.jar
+            Chunker-Paper/sources/Chunker/target/Chunker-1.0.jar
+            Poses-Paper/sources/Poses/target/Poses-1.0.jar
